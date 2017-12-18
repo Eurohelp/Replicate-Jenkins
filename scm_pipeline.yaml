@@ -1,0 +1,14 @@
+---
+-
+  job:
+    description: "Pipeline ejecuta proyecto alojado en 'https://github.com/mishel-uchuari/Replicate-LinkedOpenData-Datasets.git'"
+    sandbox: true  
+    pipeline-scm:
+      scm:
+        - git:
+             url: http://github.com/mishel-uchuari/Replicate-LinkedOpenData-Datasets.git
+             branches:
+              - pipeline-parkingsrdfcreator
+    name: "Replicate-Pipeline"
+    project-type: pipeline
+    script-path: Jenkinsfile.groovy
