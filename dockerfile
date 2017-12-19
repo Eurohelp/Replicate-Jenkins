@@ -21,5 +21,5 @@ RUN pip install PyYAML python-jenkins
 RUN mkdir /etc/jenkins_jobs/
 COPY jenkins_jobs.ini /etc/jenkins_jobs/
 COPY scm_pipeline.yaml /etc/jenkins_jobs/
-ONBUILD RUN jenkins-jobs --conf /etc/jenkins_jobs/jenkins_jobs.ini update /etc/jenkins_jobs/scm_pipeline.yaml
+COPY script.sh /etc/jenkins_jobs/
 
