@@ -19,7 +19,7 @@ RUN pip install PyYAML python-jenkins
 
 #Using the plugin to create pipeline in Jenkins
 RUN mkdir /etc/jenkins_jobs/
-COPY jenkins_jobs.ini /etc/jenkins_jobs/
-COPY scm_pipeline.yaml /etc/jenkins_jobs/
-COPY script-to-execute.sh /etc/jenkins_jobs/
+ADD jenkins_jobs.ini /etc/jenkins_jobs/
+ADD scm_pipeline.yaml /etc/jenkins_jobs/
+ADD script-to-execute.sh /etc/jenkins_jobs/
 

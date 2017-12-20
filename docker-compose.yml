@@ -1,8 +1,9 @@
 replicate-jenkins:
- image: dmuchuari/replicate-jenkins:latest
+ image: dockerfile:latest
  expose: 
        - 8080
  entrypoint: /bin/sh -c "/bin/bash -c \"$${@}\""
  command: |
       /bin/bash -c "chmod 777 /etc/jenkins_jobs/script-to-execute.sh"
       /bin/bash -c "./etc/jenkins_jobs/script-to-execute.sh"
+      
