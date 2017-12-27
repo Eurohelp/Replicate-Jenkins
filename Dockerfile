@@ -1,5 +1,5 @@
 FROM foxylion/jenkins
-MAINTAINER Mishel Uchuari <dmuchuari@hotmail.com>
+MAINTAINER Mishel Uchuari <dmuv7@hotmail.com>
 
 RUN /usr/local/bin/install-plugins.sh workflow-remote-loader workflow-aggregator build-pipeline-plugin
 #Se fija un usuario y una contrasena para ejecutar jenkins
