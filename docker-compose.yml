@@ -1,7 +1,7 @@
 replicate-jenkins:
  image: dmuchuari/replicate-jenkins:latest
  ports: 
-       - "8080:8080"
+       - "9999:8080"
  entrypoint: /bin/sh -c "/bin/bash -c \"$${@}\""
  command: |
       /bin/bash -c "chmod 777 /etc/jenkins_jobs/script-to-execute.sh && ./etc/jenkins_jobs/script-to-execute.sh"
