@@ -6,19 +6,20 @@ RUN /usr/local/bin/install-plugins.sh workflow-remote-loader workflow-aggregator
 ENV JENKINS_USER replicate
 ENV JENKINS_PASS replicate
 
-#Instalaciones
+#Installations
 USER root
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get install -y apt-utils
 RUN apt-get install -y python-pip
 RUN apt install -y linuxbrew-wrapper
 
-#Instalaciones jenkins job builder plugin
+#Jenkins Job builder plugin installations
 RUN pip install jenkins-job-builder==2.0.0.0b2
 RUN pip install PyYAML python-jenkins
 
-#Se usa el plugin para crear el pipeline in Jenkins
+#Using the plugin to create pipeline in Jenkins
 RUN mkdir /etc/jenkins_jobs/
 ADD jenkins_jobs.ini /etc/jenkins_jobs/
 ADD scm_pipeline.yaml /etc/jenkins_jobs/
 ADD script-to-execute.sh /etc/jenkins_jobs/
+
