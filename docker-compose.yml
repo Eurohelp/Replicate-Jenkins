@@ -1,5 +1,5 @@
 replicate-jenkins:
- image: dockerfile:latest
+ image: dmuchuari/replicate-jenkins:latest
  ports: 
        - "8080:8080"
  entrypoint: /bin/sh -c "/bin/bash -c \"$${@}\""
