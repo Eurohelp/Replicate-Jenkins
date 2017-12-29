@@ -5,6 +5,8 @@ RUN /usr/local/bin/install-plugins.sh workflow-remote-loader workflow-aggregator
 #Se fija un usuario y una contrasena para ejecutar jenkins
 ENV JENKINS_USER replicate
 ENV JENKINS_PASS replicate
+#Se fija el path para el despliegue de jenkins
+ENV JENKINS_OPTS --prefix=/jenkins
 
 #Instalaciones
 USER root
@@ -16,6 +18,9 @@ RUN apt install -y linuxbrew-wrapper
 #Instalaciones jenkins job builder plugin
 RUN pip install jenkins-job-builder==2.0.0.0b2
 RUN pip install PyYAML python-jenkins
+
+#Se cambia la configuracion del archivo executors.groovy
+COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/
 
 #Se usa el plugin para crear el pipeline in Jenkins
 RUN mkdir /etc/jenkins_jobs/
