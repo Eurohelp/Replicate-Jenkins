@@ -1,5 +1,5 @@
 replicate-jenkins:
- image: dockerfile:latest
+ image: dmuchuari/replicate-jenkins:latest
  environment: 
        JENKINS_OPTS: "--prefix=/jenkins"
  ports: 
