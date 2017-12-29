@@ -5,8 +5,6 @@ RUN /usr/local/bin/install-plugins.sh workflow-remote-loader workflow-aggregator
 #Se fija un usuario y una contrasena para ejecutar jenkins
 ENV JENKINS_USER replicate
 ENV JENKINS_PASS replicate
-#Se fija el path para el despliegue de jenkins
-ENV JENKINS_OPTS --prefix=/jenkins
 
 #Instalaciones
 USER root
